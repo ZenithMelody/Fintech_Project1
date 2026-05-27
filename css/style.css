@@ -1,0 +1,190 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f1115; /* Dark background */
+    color: #e0e4ed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Grid Structure */
+.app-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.panel {
+    background-color: #161920;
+    border: 1px solid #2a303c;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #4f91ff;
+    margin-bottom: 10px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #2a303c;
+    margin-bottom: 30px;
+}
+
+/* Form Controls */
+.control-group {
+    margin-bottom: 35px;
+}
+
+label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.slider-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+input[type="range"] {
+    flex: 1;
+    accent-color: #4f91ff;
+    cursor: pointer;
+}
+
+.value-badge {
+    background-color: #222733;
+    border: 1px solid #3d4659;
+    padding: 6px 12px;
+    font-family: monospace;
+    font-size: 1rem;
+    min-width: 65px;
+    text-align: center;
+}
+
+small {
+    display: block;
+    margin-top: 6px;
+    color: #768399;
+    font-size: 0.8rem;
+}
+
+/* Analytics Outputs */
+.score-container {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #1c212c;
+    border: 1px solid #2a303c;
+    padding: 40px 20px;
+}
+
+.score-container h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #768399;
+    margin-bottom: 10px;
+}
+
+.score-text {
+    font-family: monospace;
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.status-indicator {
+    margin-top: auto;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    transition: all 0.15s ease-in-out;
+}
+
+/* Output colours */
+.state-safe {
+    background-color: rgba(46, 204, 113, 0.1);
+    border-color: #2ecc71;
+    color: #2ecc71;
+}
+
+.state-review {
+    background-color: rgba(241, 196, 15, 0.1);
+    border-color: #f1c40f;
+    color: #f1c40f;
+}
+
+.state-danger {
+    background-color: rgba(231, 76, 60, 0.1);
+    border-color: #e74c3c;
+    color: #e74c3c;
+}
+
+.underwriter-tips {
+    grid-column: 1 / -1; /* Item to start at track 1 and stretch to the end */
+    background-color: #1c212c;
+    border-left: 3px solid #4f91ff;
+    padding: 20px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.underwriter-tips h3 {
+    font-size: 0.9rem;
+    color: #4f91ff;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.underwriter-tips ul {
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.underwriter-tips li {
+    margin-bottom: 8px;
+    color: #b0b7c6;
+}
+
+.underwriter-tips strong {
+    color: #e0e4ed;
+}
+
+/* --- Mobile (Media Query) --- */
+/* If screen resolution drops below 768px (tablets/mobile) */
+@media (max-width: 768px) {
+    body {
+        height: auto; 
+        padding: 10px;
+    }
+
+    .app-container {
+        grid-template-columns: 1fr; /* Single column grid stacking layout */
+        max-width: 100%;
+    }
+
+    .underwriter-tips {
+        grid-column: auto; 
+    }
+}

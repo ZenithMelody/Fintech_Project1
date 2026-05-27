@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Loan Predictor</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script href="app.js" src="js/app.js"></script>
+</head>
+<body>
+
+    <main class="app-container">
+        <section class="panel input-panel">
+            <h2>Risk Parameters</h2>
+            <hr>
+            
+            <div class="control-group">
+                <label for="debt-equity">Corporate Debt-to-Equity Ratio</label>
+                <div class="slider-wrapper">
+                    <input type="range" id="debt-equity" min="0.1" max="5.0" step="0.1" value="1.5">
+                    <span id="debt-val" class="value-badge">1.5</span>
+                </div>
+                <small>Metric definition: Total Liabilities / Shareholder Equity</small>
+            </div>
+
+            <div class="control-group">
+                <label for="interest-rate">Macro Interest Rate Environment</label>
+                <div class="slider-wrapper">
+                    <input type="range" id="interest-rate" min="2.5" max="5.5" step="0.05" value="3.5">
+                    <span id="interest-val" class="value-badge">3.50%</span>
+                </div>
+                <small>Monetary Authority of Singapore (MAS) Projected Base Rate</small>
+            </div>
+        </section>
+
+        <section class="panel output-panel">
+            <h2>Risk Prediction Output</h2>
+            <hr>
+            
+            <div class="score-container">
+                <h3>Predicted Default Risk Score</h3>
+                <div id="risk-score-display" class="score-text">0.00</div>
+            </div>
+        </section>
+
+        <div class="underwriter-tips">
+            <h3>💡 Financial Domain Reference Guide</h3>
+            <p><strong>Where to source these parameters:</strong></p>
+            <ul>
+                <li>
+                    <strong>Corporate Debt-to-Equity:</strong> Locate <strong>Total Debt/Equity (mrq)</strong> under the <em>Statistics</em> tab on Yahoo Finance. 
+                    <br>
+                    <small>&bull; Conversion: Divide the percentage by 100 (e.g., 150.00% &divide; 100 = 1.5 ratio input).</small>
+                </li>
+                <li>
+                    <strong>Macro Interest Rate:</strong> Access the <strong>Monetary Authority of Singapore (MAS)</strong> eServices portal under <em>Domestic Interest Rates</em>. 
+                    <br>
+                    <small>&bull; Extraction: Use the current <strong>3-Month Compounded SORA</strong> percentage value directly on the slider tool (e.g., 3.65% = 3.65 input).</small>
+                </li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>
